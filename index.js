@@ -9,9 +9,9 @@ const form = document.querySelector("form")
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-    sum.textContent = "Sum ="
     let roll = []
     let sumVal = 0
+    sum.textContent = "Sum ="
     for (let i = 0; i < Number(input.value); i++) {
         const randomIndex = Math.floor(Math.random() * diceRoll.length)
         const random = diceRoll[randomIndex]
@@ -20,12 +20,11 @@ form.addEventListener("submit", (e) => {
     }
     dice.textContent = roll.join("")
     sum.textContent += sumVal
-
-    button.addEventListener("click", (e) => {
-        if (e.detail > 1) {
-            const li = document.createElement("li")
-            li.textContent = roll.join("")
-            ul.appendChild(li)
-        }
+    
+    
+    const li = document.createElement("li")
+    input.addEventListener("change", () => {
+        li.textContent = `${roll.join("")}=${sumVal}`
+        ul.appendChild(li)
     })
 })
