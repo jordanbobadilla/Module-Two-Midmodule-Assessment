@@ -9,3 +9,7 @@ section {
 button {
     display: block;
 }
+
+#dice-para{
+    font-size: 50px;
+}
